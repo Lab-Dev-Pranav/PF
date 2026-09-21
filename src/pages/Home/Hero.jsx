@@ -59,7 +59,8 @@ const Hero = () => {
         playsInline
         preload="auto"
         className="hero-vdo"
-        src="src\assets\herobg.mp4"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+        // src="src\assets\herobg.mp4"
       />
 
       {/* Dark cinematic overlays */}
