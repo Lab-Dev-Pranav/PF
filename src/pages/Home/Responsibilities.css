@@ -1,0 +1,171 @@
+.responsibilities {
+  position: relative;
+  overflow: clip;
+  padding: clamp(5rem, 11vw, 9rem) 0;
+  background: #0b1114;
+  color: #f5f2e9;
+}
+
+.responsibilities::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  opacity: 0.2;
+  background: radial-gradient(circle at 18% 22%, rgba(240, 163, 110, 0.14), transparent 22rem), linear-gradient(135deg, transparent 45%, rgba(255, 255, 255, 0.025) 45%, transparent 46%);
+}
+
+.responsibilities__intro,
+.responsibilities__grid {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 1080px);
+  margin: 0 auto;
+}
+
+.responsibilities__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.responsibilities__eyebrow,
+.responsibilities__eyebrow-small {
+  color: #f0a36e;
+  font: 700 0.75rem/1 "Courier New", monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.responsibilities__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.responsibilities__intro h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+}
+
+.responsibilities__intro > p {
+  width: min(100%, 310px);
+  margin: 0 0 0.25rem;
+  color: rgba(245, 242, 233, 0.64);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.responsibilities__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.responsibilities__item {
+  min-width: 0;
+  will-change: transform, opacity;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
+.responsibilities__item--active {
+  z-index: 2;
+}
+
+.responsibilities__card {
+  min-height: 300px;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.responsibilities__item--active .responsibilities__card {
+  border-color: rgba(240, 163, 110, 0.62);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.3), 0 0 28px rgba(240, 163, 110, 0.1), inset 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.responsibilities__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.responsibilities__number {
+  color: rgba(245, 242, 233, 0.42);
+  font: 700 0.75rem/1 "Courier New", monospace;
+}
+
+.responsibilities__eyebrow-small {
+  color: #f0a36e;
+  font-size: 0.68rem;
+  text-align: right;
+}
+
+.responsibilities__card h3 {
+  position: relative;
+  margin: 4rem 0 1.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.responsibilities__card ul {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.responsibilities__card li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: rgba(245, 242, 233, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.responsibilities__card li::before {
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  content: '';
+  border-radius: 50%;
+  background: #f0a36e;
+  box-shadow: 0 0 10px rgba(240, 163, 110, 0.7);
+}
+
+@media (max-width: 700px) {
+  .responsibilities__intro {
+    display: block;
+  }
+
+  .responsibilities__intro > p {
+    margin-top: 1.5rem;
+  }
+
+  .responsibilities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .responsibilities__card {
+    min-height: 0;
+  }
+
+  .responsibilities__item {
+    transition-duration: 0.18s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .responsibilities__item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+}

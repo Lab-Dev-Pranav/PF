@@ -1,0 +1,204 @@
+.experience {
+  position: relative;
+  overflow: clip;
+  padding: clamp(5rem, 11vw, 9rem) 0;
+  background: #090d10;
+  color: #f5f2e9;
+}
+
+.experience::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  opacity: 0.18;
+  background: linear-gradient(90deg, rgba(43, 104, 255, 0.06) 1px, transparent 1px), linear-gradient(rgba(43, 104, 255, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+
+.experience__intro,
+.experience__list {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 1120px);
+  margin: 0 auto;
+}
+
+.experience__intro {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.experience__eyebrow {
+  margin: 0 0 1rem;
+  color: #4f84ff;
+  font: 700 0.75rem/1 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.experience__intro h2 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+}
+
+.experience__intro > p:last-child {
+  max-width: 500px;
+  margin: 2rem 0 0;
+  color: rgba(245, 242, 233, 0.64);
+  line-height: 1.6;
+}
+
+.experience__list {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.experience__card {
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  border: 1px solid rgba(55, 105, 220, 0.72);
+  border-radius: 28px;
+  background: linear-gradient(115deg, rgba(28, 28, 30, 0.95), rgba(16, 18, 22, 0.92));
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateY(48px) scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.experience__card--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.experience__card:hover {
+  border-color: #6b95ff;
+  box-shadow: 0 28px 75px rgba(0, 0, 0, 0.52), 0 0 28px rgba(51, 103, 255, 0.14), inset 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.experience__card-header,
+.experience__card-body {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.5fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.experience__card-header {
+  align-items: start;
+}
+
+.experience__title-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.experience__sequence {
+  padding-top: 0.35rem;
+  color: rgba(245, 242, 233, 0.4);
+  font: 700 0.72rem/1 "Courier New", monospace;
+}
+
+.experience__card h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.experience__card h3 strong {
+  color: #2870ff;
+}
+
+.experience__card h3 span {
+  color: #f5f2e9;
+  font-weight: 400;
+}
+
+.experience__period {
+  justify-self: end;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #dbe9ff;
+  color: #1b54ba;
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.experience__card-body {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(245, 242, 233, 0.08);
+}
+
+.experience__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 0.7rem;
+}
+
+.experience__technologies span {
+  padding: 0.7rem 0.95rem;
+  border-radius: 10px;
+  background: #dbe9ff;
+  color: #1b54ba;
+  font-size: 0.86rem;
+  line-height: 1;
+}
+
+.experience__summary,
+.experience__details li {
+  color: rgba(245, 242, 233, 0.78);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.experience__summary {
+  margin: 0 0 1.35rem;
+}
+
+.experience__details ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.experience__details li::marker {
+  color: #4f84ff;
+}
+
+@media (max-width: 700px) {
+  .experience__card-header,
+  .experience__card-body {
+    display: block;
+  }
+
+  .experience__period {
+    display: inline-block;
+    margin: 1.2rem 0 0 2rem;
+  }
+
+  .experience__card-body {
+    margin-top: 1.8rem;
+  }
+
+  .experience__details {
+    margin-top: 1.5rem;
+  }
+
+  .experience__card {
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience__card {
+    opacity: 1;
+    transform: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+}

@@ -1,0 +1,273 @@
+.certification {
+  position: relative;
+  overflow: clip;
+  padding: clamp(5rem, 11vw, 9rem) 0;
+  background: radial-gradient(circle at 78% 30%, rgba(240, 163, 110, 0.12), transparent 25rem), linear-gradient(135deg, #0a1114, #111b1e 58%, #0a1012);
+  color: #f5f2e9;
+}
+
+.certification::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.certification__intro,
+.certification__carousel {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 1120px);
+  margin: 0 auto;
+}
+
+.certification__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  text-align: left;
+}
+
+.certification__eyebrow {
+  margin: 0 0 1rem;
+  color: #f0a36e;
+  font: 700 0.75rem/1 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.certification__intro h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+}
+
+.certification__intro > p:last-child {
+  width: min(100%, 320px);
+  margin: 0 0 0.25rem;
+  color: rgba(245, 242, 233, 0.62);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.certification__carousel {
+  height: 650px;
+  margin-top: 3.5rem;
+  outline: none;
+  perspective: 1500px;
+  touch-action: pan-y;
+}
+
+.certification__carousel::before {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  width: min(76vw, 650px);
+  height: 300px;
+  content: '';
+  border: 1px solid rgba(240, 163, 110, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(240, 163, 110, 0.08);
+  transform: translate(-50%, -50%) rotate(-8deg);
+}
+
+.certification__carousel:focus-visible {
+  outline: 2px solid #f0a36e;
+  outline-offset: 8px;
+  border-radius: 18px;
+}
+
+.certification__stage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 455px;
+  transform-style: preserve-3d;
+}
+
+.certification__card {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  width: min(460px, 68vw);
+  height: min(300px, 44vw);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(245, 242, 233, 0.2);
+  border-radius: 16px;
+  background: #111a1e;
+  box-shadow: 0 34px 70px -25px rgba(0, 0, 0, 0.85), 0 10px 26px -12px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+
+.certification__card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.certification__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #182226;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.certification__tint {
+  position: absolute;
+  inset: 0;
+  background: #05060a;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.certification__details {
+  position: absolute;
+  bottom: 3.1rem;
+  left: 50%;
+  width: min(100% - 2rem, 680px);
+  padding: 1.25rem 1.5rem 1.35rem;
+  text-align: center;
+  border: 1px solid rgba(245, 242, 233, 0.13);
+  border-radius: 18px;
+  background: rgba(10, 17, 20, 0.62);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06), 0 20px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  transform: translateX(-50%);
+}
+
+.certification__details p {
+  margin: 0 0 0.5rem;
+  color: #f0a36e;
+  font: 700 0.7rem/1 "Courier New", monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.certification__details h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.certification__details span {
+  display: block;
+  margin-top: 0.55rem;
+  color: rgba(245, 242, 233, 0.62);
+  font-size: 0.86rem;
+}
+
+.certification__arrow {
+  position: absolute;
+  top: 47%;
+  z-index: 3000;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(245, 242, 233, 0.2);
+  border-radius: 50%;
+  background: rgba(17, 26, 30, 0.68);
+  color: #f5f2e9;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.certification__arrow:hover {
+  border-color: #f0a36e;
+  background: rgba(240, 163, 110, 0.18);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.certification__arrow--prev { left: clamp(0rem, 5vw, 4rem); }
+.certification__arrow--next { right: clamp(0rem, 5vw, 4rem); }
+
+.certification__dots {
+  position: absolute;
+  bottom: 0.9rem;
+  left: 50%;
+  z-index: 3000;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.certification__dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(245, 242, 233, 0.3);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.certification__dots button.is-active {
+  width: 26px;
+  background: #f0a36e;
+}
+
+@media (max-width: 700px) {
+  .certification__intro {
+    display: block;
+  }
+
+  .certification__intro > p:last-child {
+    margin-top: 1.5rem;
+  }
+
+  .certification__carousel {
+    height: 580px;
+    margin-top: 2.5rem;
+  }
+
+  .certification__stage {
+    height: 390px;
+  }
+
+  .certification__card {
+    top: 43%;
+    width: min(380px, 82vw);
+    height: min(248px, 54vw);
+  }
+
+  .certification__details {
+    bottom: 3rem;
+    width: calc(100% - 1rem);
+    padding-inline: 1rem;
+  }
+
+  .certification__arrow--prev { left: 0; }
+  .certification__arrow--next { right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certification__card,
+  .certification__arrow,
+  .certification__dots button {
+    transition: none;
+  }
+}

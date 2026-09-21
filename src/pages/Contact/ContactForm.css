@@ -1,0 +1,77 @@
+.contact-form-panel {
+  min-width: 0;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.contact-form label {
+  margin-top: 0.6rem;
+  color: rgba(245, 245, 245, 0.62);
+  font-size: 0.88rem;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  outline: none;
+  background: #191b1f;
+  color: #fff;
+  font: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #8998ad;
+}
+
+.form-input:focus {
+  border-color: #6176ff;
+  box-shadow: 0 0 0 3px rgba(97, 118, 255, 0.14);
+}
+
+.submit-btn {
+  width: fit-content;
+  margin-top: 1rem;
+  padding: 0.9rem 1.7rem;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #176be8, #8135e9);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  cursor: wait;
+  filter: grayscale(0.25);
+  opacity: 0.7;
+  transform: none;
+}
+
+.contact-form__status {
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
+}
+
+.contact-form__status--success {
+  color: #77e0a1;
+}
+
+.contact-form__status--error {
+  color: #ff8e8e;
+}

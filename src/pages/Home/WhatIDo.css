@@ -1,0 +1,36 @@
+.what-i-do {
+  overflow: clip;
+  padding: clamp(5rem, 12vw, 10rem) 0;
+  background: #101719;
+  color: #f5f2e9;
+}
+
+.what-i-do__intro {
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+.what-i-do__eyebrow {
+  margin: 0 0 1rem;
+  color: #f0a36e;
+  font: 700 0.75rem/1 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.what-i-do__intro h2 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+}
+
+.what-i-do__intro > p:last-child {
+  max-width: 500px;
+  margin: 2rem 0 0;
+  color: rgba(245, 242, 233, 0.68);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+}
