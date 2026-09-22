@@ -9,14 +9,21 @@
   width: min(100%, 1020px);
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 4.5rem) clamp(1rem, 4vw, 3rem);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 28px;
-  background: rgba(18, 18, 18, 0.82);
+  background: rgba(173, 56, 56, 0);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), inset 0 1px rgba(255, 255, 255, 0.04);
 }
 
+@media (min-width: 200px) { 
+  .contact-shell { 
+    background: rgba(226, 22, 22, 0); 
+    padding: 30px 0px 0px 0px;
+  } 
+}
+
 .contact-heading {
-  margin-bottom: 2rem;
+  margin:2rem 0rem -1rem 0rem;
   text-align: center;
 }
 
@@ -46,6 +53,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   background: rgba(29, 29, 29, 0.78);
+  margin: 50px 0px 0px 0px;
 }
 
 .contact-info h2 {

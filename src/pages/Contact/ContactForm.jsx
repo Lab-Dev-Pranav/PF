@@ -1,61 +1,74 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import './ContactForm.css';
 
-const EMAILJS_SERVICE_ID = 'service_05uzerb';
-const EMAILJS_TEMPLATE_ID = 'template_zt4s6tb';
-const EMAILJS_PUBLIC_KEY = '4mzJkxJLR0IvSOnCb';
 
-const ContactForm = () => {
-  const [status, setStatus] = useState({ type: '', message: '' });
-  const [isSending, setIsSending] = useState(false);
+// const ContactForm = () => {
+//   const [status, setStatus] = useState({ type: '', message: '' });
+//   const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = async event => {
+
+
+//   return (
+//     <section className="contact-form-panel" aria-label="Send a message">
+//       <form className="contact-form" onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
+//          <input type="hidden" name="access_key" value="3b76c54f-a140-4921-ae7c-91a21e8a04f9"></input>
+
+//         <label htmlFor="contact-name">Your Name</label>
+//         <input id="contact-name" name="fromName" type="text" placeholder="Enter your name" className="form-input" required />
+
+//         <label htmlFor="contact-email">Your Email</label>
+//         <input id="contact-email" name="fromEmail" type="email" placeholder="Enter your email" className="form-input" required />
+
+//         <label htmlFor="contact-message">Your Message</label>
+//         <textarea id="contact-message" name="message" placeholder="Write your message..." rows="5" className="form-input" required />
+
+//         <button type="submit" className="submit-btn" disabled={isSending}>
+//           {isSending ? 'Sending...' : 'Send Message'}
+//         </button>
+
+//         {/* {status.message ? <p className={`contact-form__status contact-form__status--${status.type}`} role="status">{status.message}</p> : null} */}
+//       </form>
+//     </section>
+//   );
+// };
+
+// export default ContactForm;
+
+
+export default function ContactForm() {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
     event.preventDefault();
-    setIsSending(true);
-    setStatus({ type: '', message: '' });
+    const formData = new FormData(event.target);
+    formData.append("access_key", "3b76c54f-a140-4921-ae7c-91a21e8a04f9");
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
 
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.get('fromName'),
-          from_email: formData.get('fromEmail'),
-          message: formData.get('fromMsg')
-        },
-        EMAILJS_PUBLIC_KEY
-      );
-
-      form.reset();
-      setStatus({ type: 'success', message: 'Message sent successfully.' });
-    } catch (error) {
-      console.error('Error sending message:', error);
-      setStatus({ type: 'error', message: 'Message could not be sent. Please try again.' });
-    } finally {
-      setIsSending(false);
-    }
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
   };
 
   return (
     <section className="contact-form-panel" aria-label="Send a message">
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="contact-name">Your Name</label>
-        <input id="contact-name" name="fromName" type="text" placeholder="Enter your name" className="form-input" required />
-        <label htmlFor="contact-email">Your Email</label>
-        <input id="contact-email" name="fromEmail" type="email" placeholder="Enter your email" className="form-input" required />
-        <label htmlFor="contact-message">Your Message</label>
-        <textarea id="contact-message" name="fromMsg" placeholder="Write your message..." rows="5" className="form-input" required />
-        <button type="submit" className="submit-btn" disabled={isSending}>
-          {isSending ? 'Sending...' : 'Send Message'}
+      <form className="contact-form" onSubmit={onSubmit}>
+
+          <label htmlFor="contact-name">Your Name</label>
+        <input id='contact-name' type="text" name="name" className="form-input" required />
+
+          <label htmlFor="contact-email">Your Email</label>
+        <input id="contact-email" type="email" name="email" className="form-input" required />
+
+          <label htmlFor="contact-message">Your Message</label>
+        <textarea id="contact-message" name="message" className="form-input" required></textarea>
+        <button type="submit" className="submit-btn">
+          Submit
         </button>
-        {status.message ? <p className={`contact-form__status contact-form__status--${status.type}`} role="status">{status.message}</p> : null}
+        <p>{result}</p>
       </form>
     </section>
   );
-};
-
-export default ContactForm;
+}

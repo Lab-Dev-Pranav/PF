@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './includes/Navbar';
@@ -24,6 +24,12 @@ function App() {
 function AppShell() {
   const location = useLocation();
   const isIntroRoute = location.pathname === '/';
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, [location.pathname, location.search, location.hash]);
 
   return (
     <div className={`app-container ${isIntroRoute ? 'app-container--intro' : ''}`}>

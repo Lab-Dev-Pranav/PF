@@ -34,3 +34,12 @@
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.6;
 }
+
+
+
+@media (min-width: 200px) { 
+ .magic-bento__card{
+    /* background: rgba(226, 22, 22, 0.788);  */
+    margin: 0px 15px 0px 0px;
+  } 
+}
