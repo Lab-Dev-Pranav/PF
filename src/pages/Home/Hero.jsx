@@ -77,7 +77,11 @@ const Hero = () => {
           {/* Large heading with PullUp Animation */}
           <div className="hero-main-container-l">
             <h1 style={{ margin: 0 }}>
+
               <WordsPullUp text="_dev.pranav____" className="hero-title" />
+              <br /> 
+              <p>Idea ⇲</p>
+              <p>Design ⇛ Build ⇛ Deploy ⇛ Upgrade ⇛ Push</p>
             </h1>
           </div>
 

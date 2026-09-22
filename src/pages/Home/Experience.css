@@ -2,7 +2,7 @@
   position: relative;
   overflow: clip;
   padding: clamp(5rem, 11vw, 9rem) 0;
-  background: #090d10;
+  background: #000000;
   color: #f5f2e9;
 }
 
@@ -59,13 +59,14 @@
 
 .experience__card {
   padding: clamp(1.4rem, 3vw, 2.4rem);
-  border: 1px solid rgba(55, 105, 220, 0.72);
+  border: 1px solid rgba(55, 105, 220, 0.281);
   border-radius: 28px;
   background: linear-gradient(115deg, rgba(28, 28, 30, 0.95), rgba(16, 18, 22, 0.92));
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.05);
   opacity: 0;
   transform: translateY(48px) scale(0.98);
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
 }
 
 .experience__card--visible {

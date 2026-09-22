@@ -3,7 +3,7 @@
   padding: clamp(5rem, 12vw, 10rem) 0;
   background:
     radial-gradient(circle at 12% 18%, rgba(240, 163, 110, 0.12), transparent 26rem),
-    #0d1417;
+    #000000;
   color: #f5f2e9;
 }
 
