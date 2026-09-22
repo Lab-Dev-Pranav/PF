@@ -129,6 +129,10 @@
       margin: 0px 0px 10px 45px;
 }
 
+.hero-main-container-l .p1{
+  margin: 15px 0px 10px 45px;
+}
+
 @media (max-width: 600px) { 
   .hero-main-container-l p { 
     /* display: none;  */

@@ -80,8 +80,8 @@ const Hero = () => {
 
               <WordsPullUp text="_dev.pranav____" className="hero-title" />
               <br /> 
-              <p>Idea ⇲</p>
-              <p>Design ⇛ Build ⇛ Deploy ⇛ Upgrade ⇛ Push</p>
+              <p className='p1'>Idea ⇲</p>
+              <p className='p2'>Design ⇛ Build ⇛ Deploy ⇛ Upgrade ⇛ Push</p>
             </h1>
           </div>
 
