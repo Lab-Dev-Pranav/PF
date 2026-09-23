@@ -23,6 +23,7 @@ const Contact = () => {
               <div>
                 <dt>Phone:</dt>
                 <dd><a href="tel:+917058454759">+91 7058454759</a></dd>
+                <dd><a href="tel:+917083374759">+91 7083374759</a></dd>
               </div>
               <div>
                 <dt>Available at:</dt>
