@@ -31,10 +31,10 @@
   padding: clamp(1.5rem, 4vw, 3rem);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 24px;
-  /* background: linear-gradient(135deg, #173b43, #10252e 58%, #241e2b); */
-  /* box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28); */
+  background: linear-gradient(135deg, #7e6e44, #504d45 58%, #5f4e25);
+  box-shadow: 0 24px 60px rgba(110, 106, 106, 0.596);
 
-    background: rgba(255, 255, 255, 0.08);
+    /* background: rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -44,7 +44,7 @@
   box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.15),
     inset 0 1px 1px rgba(255, 255, 255, 0.2),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2); */
 
   transform-origin: top center;
   transform-style: preserve-3d;
