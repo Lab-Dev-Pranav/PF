@@ -87,7 +87,7 @@ const Hero = () => {
 
           <div className="hero-main-container-r">
             <p className="hero-description">
-              Pranav is a passionate MERN Stack Developer, problem solver and creative technologist driven by curiosity, innovation and the desire to build meaningful digital experiences. Not defined by labels or limitations, but by a constant hunger to learn, create and turn ideas into scalable solutions through code.
+              a passionate MERN Stack Developer, problem solver and creative technologist driven by curiosity, innovation and the desire to build meaningful digital experiences. Not defined by labels or limitations, but by a constant hunger to learn, create and turn ideas into scalable solutions through code.
             </p>
           </div>
           

@@ -1,0 +1,434 @@
+.horizontal-scroll {
+  --scroll-ink: #f5f2e9;
+  --scroll-muted: rgba(245, 242, 233, 0.64);
+  --scroll-blue: #4f84ff;
+  width: 100%;
+  overflow: clip;
+  background: #000;
+  color: var(--scroll-ink);
+}
+
+.horizontal-scroll__article {
+  background: #000;
+}
+
+.horizontal-scroll__hero {
+  position: relative;
+  display: grid;
+  min-height: 80vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 5rem 1rem;
+  isolation: isolate;
+}
+
+.horizontal-scroll__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: linear-gradient(rgba(79, 132, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 132, 255, 0.1) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 20%, #000 30%, transparent 100%);
+}
+
+.horizontal-scroll__hero-content {
+  width: min(100%, 1120px);
+}
+
+.horizontal-scroll__eyebrow,
+.horizontal-scroll__number {
+  color: var(--scroll-blue);
+  font: 700 0.7rem/1.2 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 30px 0px 0px -80px;
+}
+
+@media (min-width: 400px) {
+  .horizontal-scroll__eyebrow,
+  .horizontal-scroll__number {
+    margin: 40px 0px 0px 0px;
+  }
+  .horizontal-scroll__panel-content {
+    margin: 50px 0px 0px 0px;
+  }
+}
+
+.horizontal-scroll__eyebrow {
+  margin: 0 0 1.5rem;
+}
+
+.horizontal-scroll__hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(3.2rem, 9vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+}
+
+.horizontal-scroll__hero-note {
+  max-width: 420px;
+  margin: 2.5rem 0 0;
+  color: var(--scroll-muted);
+  line-height: 1.6;
+}
+
+.horizontal-scroll__track {
+  position: relative;
+  height: 500vh;
+  /* border: 1px solid red; */
+
+
+}
+
+.horizontal-scroll__list {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+  list-style: none;
+}
+
+.horizontal-scroll__panel {
+  position: relative;
+  display: flex;
+  flex: 0 0 100vw;
+  height: 100vh;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--panel-ink);
+  isolation: isolate;
+}
+
+.horizontal-scroll__panel::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.4;
+  background: linear-gradient(90deg, var(--panel-grid) 1px, transparent 1px), linear-gradient(var(--panel-grid) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.horizontal-scroll__panel--passion {
+  --panel-ink: #e8f0ff;
+  --panel-muted: rgba(232, 240, 255, 0.7);
+  --panel-accent: #73a5ff;
+  --panel-line: rgba(115, 165, 255, 0.42);
+  --panel-grid: rgba(115, 165, 255, 0.12);
+  --panel-surface: rgba(20, 48, 93, 0.5);
+  background: #081426;
+}
+
+.horizontal-scroll__panel--work {
+  --panel-ink: #e8f4ff;
+  --panel-muted: rgba(232, 244, 255, 0.7);
+  --panel-accent: #56c7ff;
+  --panel-line: rgba(86, 199, 255, 0.42);
+  --panel-grid: rgba(86, 199, 255, 0.12);
+  --panel-surface: rgba(13, 55, 82, 0.52);
+  background: #071d2b;
+}
+
+.horizontal-scroll__panel--motivation {
+  --panel-ink: #fff2d6;
+  --panel-muted: rgba(255, 242, 214, 0.7);
+  --panel-accent: #ffc766;
+  --panel-line: rgba(255, 199, 102, 0.42);
+  --panel-grid: rgba(255, 199, 102, 0.12);
+  --panel-surface: rgba(92, 56, 16, 0.48);
+  background: #241807;
+}
+
+.horizontal-scroll__panel--inspiration {
+  --panel-ink: #e2fff4;
+  --panel-muted: rgba(226, 255, 244, 0.7);
+  --panel-accent: #5ee0bb;
+  --panel-line: rgba(94, 224, 187, 0.42);
+  --panel-grid: rgba(94, 224, 187, 0.12);
+  --panel-surface: rgba(18, 82, 70, 0.48);
+  background: #071f1c;
+}
+
+.horizontal-scroll__panel--believe {
+  --panel-ink: #f0edff;
+  --panel-muted: rgba(240, 237, 255, 0.7);
+  --panel-accent: #b8a5ff;
+  --panel-line: rgba(184, 165, 255, 0.42);
+  --panel-grid: rgba(184, 165, 255, 0.12);
+  --panel-surface: rgba(53, 35, 103, 0.5);
+  background: #17132d;
+}
+
+.horizontal-scroll__number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: var(--panel-accent);
+}
+
+.horizontal-scroll__panel-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  grid-template-rows: auto auto 1fr;
+  gap: 1.5rem 5vw;
+  width: min(1120px, calc(100% - 12vw));
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.horizontal-scroll__panel h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  grid-column: 1 / -1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(4rem, 13vw, 11rem);
+  font-weight: 800;
+  line-height: 0.76;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  .horizontal-scroll__panel h2 {
+    margin: 100px 0px 0px 0px;
+  }
+}
+
+.horizontal-scroll__description {
+  max-width: 430px;
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.horizontal-scroll__signal-list,
+.horizontal-scroll__stack-grid,
+.horizontal-scroll__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 0.6rem;
+}
+
+.horizontal-scroll__signal-list span,
+.horizontal-scroll__stack-grid span,
+.horizontal-scroll__status span {
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--panel-line);
+  background: var(--panel-surface);
+  font: 700 0.7rem/1 "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.horizontal-scroll__system-flow,
+.horizontal-scroll__api-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: min(100%, 300px);
+  padding: 1rem;
+  border: 1px solid var(--panel-line);
+  background: var(--panel-surface);
+  font: 700 0.7rem/1 "Courier New", monospace;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.horizontal-scroll__system-flow span,
+.horizontal-scroll__api-flow span {
+  padding: 0.65rem;
+  border: 1px dashed var(--panel-line);
+}
+
+.horizontal-scroll__system-flow i,
+.horizontal-scroll__api-flow b,
+.horizontal-scroll__scale-stack b {
+  display: block;
+  padding: 0.35rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.horizontal-scroll__code-line {
+  align-self: end;
+  margin: 0;
+  color: var(--panel-muted);
+  font: 0.75rem/1.5 "Courier New", monospace;
+}
+
+.horizontal-scroll__api-flow {
+  justify-self: end;
+  width: min(100%, 330px);
+}
+
+.horizontal-scroll__status {
+  grid-column: 1 / -1;
+}
+
+.horizontal-scroll__project-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.horizontal-scroll__project-list a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.3rem 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--panel-line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.horizontal-scroll__project-list strong {
+  font-size: 1rem;
+}
+
+.horizontal-scroll__project-list span,
+.horizontal-scroll__project-list em {
+  color: var(--panel-muted);
+  font: 0.65rem/1.2 "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.horizontal-scroll__project-list em {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--panel-accent);
+  font-style: normal;
+}
+
+.horizontal-scroll__scale-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 330px);
+  padding: 1rem;
+  border: 1px solid var(--panel-line);
+  font: 700 0.7rem/1 "Courier New", monospace;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.horizontal-scroll__scale-stack span,
+.horizontal-scroll__scale-stack strong {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px dashed var(--panel-line);
+}
+
+.horizontal-scroll__scale-stack strong {
+  background: var(--panel-accent);
+  color: #06101c;
+}
+
+.horizontal-scroll__closing {
+  align-self: end;
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.horizontal-scroll__closing span {
+  color: var(--panel-accent);
+}
+
+.horizontal-scroll__footer {
+  display: grid;
+  min-height: 55vh;
+  place-items: center;
+  padding: 4rem 1rem;
+  background: #000;
+  color: var(--scroll-ink);
+  text-align: center;
+}
+
+.horizontal-scroll__footer p {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.horizontal-scroll__footer p span {
+  color: var(--scroll-blue);
+}
+
+.horizontal-scroll__footer a {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--scroll-blue);
+  font: 700 0.75rem/1 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .horizontal-scroll__hero {
+    min-height: 72vh;
+    place-items: end start;
+  }
+
+  .horizontal-scroll__panel {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .horizontal-scroll__panel-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: min(100% - 2.5rem, 34rem);
+    padding: 4rem 0 2rem;
+  }
+
+  .horizontal-scroll__panel h2 {
+    font-size: clamp(3.5rem, 18vw, 7rem);
+    white-space: normal;
+  }
+
+  .horizontal-scroll__api-flow,
+  .horizontal-scroll__scale-stack {
+    justify-self: start;
+    width: min(100%, 22rem);
+  }
+
+  .horizontal-scroll__status {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-scroll__panel h2 {
+    transform: none !important;
+  }
+}
+
+.horizontal-scroll__api-flow span {
+  transition: all 0.3s ease;
+  opacity: 0.35;
+}
+
+.horizontal-scroll__api-flow span.active {
+  opacity: 1;
+  background: #d1d7e4;
+  color: rgb(248, 122, 5);
+  font-size: 15px;
+  box-shadow: 0 0 20px rgba(79, 132, 255, 0.5);
+  transform: scale(1.05);
+}

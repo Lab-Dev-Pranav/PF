@@ -10,6 +10,7 @@ import Academics from './Academics';
 import Certification from './Certification';
 import Blog from './Blog';
 import Responsibilities from './Responsibilities';
+import HorizontalScroll from './HorizontalScroll';
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Services />
       <Experience />
       <WhatIDo />
+      <HorizontalScroll />
       <Academics />
       <Certification />
       <Blog />
