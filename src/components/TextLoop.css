@@ -1,0 +1,42 @@
+.text-loop {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 43.333vw, 500px);
+  overflow: hidden;
+  background: #9c303000;
+}
+
+.text-loop-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* margin: -210px 0px 0px 0px; */
+}
+
+
+.text-loop-text {
+  user-select: none;
+}
+
+.text-loop-measure {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .text-loop {
+    height: clamp(70px, 24vw, 110px);
+  }
+
+  .text-loop-svg {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 180%;
+    height: 300px;
+    max-width: none;
+    transform: translate(-50%, -50%);
+  }
+}
+
+

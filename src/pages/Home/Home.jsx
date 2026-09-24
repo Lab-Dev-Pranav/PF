@@ -11,6 +11,7 @@ import Certification from './Certification';
 import Blog from './Blog';
 import Responsibilities from './Responsibilities';
 import HorizontalScroll from './HorizontalScroll';
+import TextLoop from '../../components/TextLoop';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
     <>
        <Hero />
       <About />
+      <TextLoop />
       <Services />
       <Experience />
       <WhatIDo />
